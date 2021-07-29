@@ -4,13 +4,18 @@ s.barbieri@unsw.edu.au
 '''
 import torch
 import math
+import os
 
 class Hyperparameters:
   '''Hyperparameters'''
   # data
-  mimic_dir = '/Users/matthewlevine/Downloads/physionet.org/files/mimiciii/1.4/'
-  data_dir = '../data/'
-  logdir = '../logdir/' # log directory  
+  if '~home/mlevine' in os.getwd(): # HPC
+    data_dir = '/groups/astuart/mlevine/time_aware_attention/data/'
+    logdir = '/groups/astuart/mlevine/time_aware_attention/logdir/' # log directory
+  else: # local
+    mimic_dir = '/Users/matthewlevine/Downloads/physionet.org/files/mimiciii/1.4/'
+    data_dir = '../data/'
+    logdir = '../logdir/' # log directory
 
   # model
   min_count = 100 # words whose occurred less than min_cnt are encoded as OTHER
