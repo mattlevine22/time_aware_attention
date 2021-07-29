@@ -9,7 +9,7 @@ import os
 class Hyperparameters:
   '''Hyperparameters'''
   # data
-  if '~home/mlevine' in os.getcwd(): # HPC
+  if 'home/mlevine' in os.getcwd(): # HPC
     data_dir = '/groups/astuart/mlevine/time_aware_attention/data/'
     logdir = '/groups/astuart/mlevine/time_aware_attention/logdir/' # log directory
   else: # local
@@ -19,18 +19,18 @@ class Hyperparameters:
 
   # model
   min_count = 100 # words whose occurred less than min_cnt are encoded as OTHER
-    
+
   # training
   batch_size = 128
   num_epochs = 80
   dropout_rate = 0.5
   patience = 10 # early stopping
-  
+
   # which data to load
   # on_the_cloud = False
   all_train = False
   # all_train = True
-  
+
   # network variants
   # net_variant = 'birnn_concat_time_delta'
   # net_variant = 'birnn_concat_time_delta_attention'
@@ -45,21 +45,14 @@ class Hyperparameters:
   # net_variant = 'mce_attention'#
   # net_variant = 'mce_birnn'#
   # net_variant = 'mce_birnn_attention'#
-  
+
   # bootstrapping
   np_seed = 1234
   bootstrap_samples = 100
-  
+
   # bayesian network
   pi = 0.5
   sigma1 = math.exp(-0)
   sigma2 = math.exp(-6)
   samples = 1
   test_samples = 10
-  
-  
-  
-  
-
-  
-  
