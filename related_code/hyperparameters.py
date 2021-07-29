@@ -9,7 +9,7 @@ import os
 class Hyperparameters:
   '''Hyperparameters'''
   # data
-  if '~home/mlevine' in os.getwd(): # HPC
+  if '~home/mlevine' in os.getcwd(): # HPC
     data_dir = '/groups/astuart/mlevine/time_aware_attention/data/'
     logdir = '/groups/astuart/mlevine/time_aware_attention/logdir/' # log directory
   else: # local
